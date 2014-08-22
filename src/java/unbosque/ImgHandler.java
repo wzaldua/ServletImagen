@@ -6,10 +6,21 @@
 
 package unbosque;
 
+import java.io.File;
+
 /**
  *
  * @author wilvergzalduae
  */
 public class ImgHandler {
+    
+    public ImgHandler(){
+        
+    }
+    
+    public boolean existeImagen(){
+         File f=new File("//Users/wilvergzalduae/Downloads/BigImageMix.png");
+         return f.exists();
+    }
     
 }

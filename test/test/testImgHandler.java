@@ -7,6 +7,8 @@
 package test;
 
 import org.testng.annotations.Test;
+import org.testng.Assert;
+import unbosque.ImgHandler;
 
 /**
  *
@@ -16,7 +18,8 @@ public class testImgHandler {
     
     @Test
     public void archivoExiste(){
-        
+        ImgHandler imghan = new ImgHandler(); 
+        Assert.assertEquals(imghan.existeImagen(), true );  
     }
     
 }

@@ -38,6 +38,7 @@ public class ImgServlet extends HttpServlet {
             File f=new File("//Users/wilvergzalduae/Downloads/BigImageMix.png");
             byte[] resultado = new byte[4096];
             FileInputStream fileInStre = new FileInputStream(f);
+            
 
             response.setContentType("image/png");
             OutputStream sos = response.getOutputStream();
