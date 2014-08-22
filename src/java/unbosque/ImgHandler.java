@@ -18,9 +18,9 @@ public class ImgHandler {
         
     }
     
-    public boolean existeImagen(){
+    public File existeImagen(){
          File f=new File("//Users/wilvergzalduae/Downloads/BigImageMix.png");
-         return f.exists();
+         return f;
     }
     
 }
