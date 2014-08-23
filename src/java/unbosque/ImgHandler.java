@@ -18,26 +18,36 @@ import java.util.ArrayList;
  */
 public class ImgHandler {
     
-    static ArrayList<Byte> arrayimagen;
+    ArrayList<Byte> arrayimagen;
     static byte[] resultado;
     static File f;
+    public static ImgHandler instance;
     
-    public ImgHandler(){
-        
+    ///constructor
+    private ImgHandler(){
+        f=new File("D:\\casa.jpg");
     }
     
+    //clase que devuelve la instancia
+    public static ImgHandler getInstance(){
+        if(instance == null){
+            instance = new ImgHandler();
+        }
+        return instance;
+    }
+   
+    
     public File existeImagen(){
-         f=new File("//Users/wilvergzalduae/Downloads/BigImageMix.png");
+        // f=new File("D:\\casa.jpg");
          return f;
     }
     
     public ArrayList<Byte> llenarArrayImagen() throws FileNotFoundException, IOException{
-        resultado = new byte[4096];
+        resultado = new byte[1024];
         FileInputStream fileInStre = new FileInputStream(f);
-        int count = 0;
-            while ((count = fileInStre.read(resultado)) >= 0) {
-                arrayimagen.add((byte)count);
-            }
+        while ((fileInStre.read(resultado)) >= 0) {
+            fileInStre.read(resultado);
+        }   
         return arrayimagen;   
     }
     

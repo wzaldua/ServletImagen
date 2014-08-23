@@ -35,18 +35,16 @@ public class ImgServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            File f=new File("//Users/wilvergzalduae/Downloads/BigImageMix.png");
-            byte[] resultado = new byte[4096];
-            FileInputStream fileInStre = new FileInputStream(f);
+            File f=new File("D:\\casa.jpg");
+            byte[] resultado = new byte[1024];
+            FileInputStream fileInStre = new FileInputStream(f);           
 
             response.setContentType("image/png");
             OutputStream sos = response.getOutputStream();
-            int count = 0;
-            while ((count = fileInStre.read(resultado)) >= 0) {
-                sos.write(resultado, 0, count);
+            while ((fileInStre.read(resultado)) >= 0) {
+                sos.write(resultado);
                 sos.flush();
             }
-
             sos.close();
             fileInStre.close();
     }

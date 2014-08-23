@@ -7,6 +7,7 @@
 package test;
 
 import java.io.File;
+import java.io.IOException;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 import unbosque.ImgHandler;
@@ -19,9 +20,15 @@ public class testImgHandler {
     
     @Test
     public void archivoExiste(){
-        ImgHandler imghan = new ImgHandler(); 
+        ImgHandler imghan = ImgHandler.getInstance(); 
         File f = imghan.existeImagen();
         Assert.assertEquals(f.exists(), true );  
+    }
+    
+    @Test
+    public void llenarArrayImagen() throws IOException{
+         ImgHandler imghan = ImgHandler.getInstance();
+         imghan.llenarArrayImagen();
     }
     
 }
